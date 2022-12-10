@@ -11,7 +11,7 @@ const MediaDevicesHelpers = {
       } catch(error){
         reject(error)
       }
-    });
+    }.bind(this));
   },
 
   validateMediaConstraints: function(constraints) {
@@ -33,4 +33,4 @@ const MediaDevicesHelpers = {
   }
 }
 
-module.exports = MediaDevicesHelpers;
+export default MediaDevicesHelpers;

@@ -1,7 +1,8 @@
 const http = require('http');
 const static = require('node-static');
 
-const dir = new(static.Server)(`${__dirname}/static`, { cache : false });
+const staticDir = new(static.Server)(`${__dirname}`, { cache : false });
+
 
 const requestListener = function(req, res){
   // Serving static directory to test page
@@ -10,7 +11,7 @@ const requestListener = function(req, res){
   // So to test its functionality, we create
   // some html pages and serve them static
   // To info https://nodejs.org/en/knowledge/HTTP/servers/how-to-serve-static-files/
-  dir.serve(req, res)
+  staticDir.serve(req, res);
 }
 
 const server = http.createServer(requestListener);
